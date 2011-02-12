@@ -18,10 +18,12 @@ The [Apache Solr](http://lucene.apache.org/solr/) [OpenBitSet](http://lucene.apa
 is used as the underlying binary vector representation class.
 
 Margarita depends on the following libraries:
-* Colt: http://acs.lbl.gov/~hoschek/colt/
-* JSci: http://jsci.sourceforge.net/
+
+ * Colt: http://acs.lbl.gov/~hoschek/colt/
+ * JSci: http://jsci.sourceforge.net/
 
 Foliage further depends on:
-* Jakarta ORO: http://jakarta.apache.org/oro/
+
+ * Jakarta ORO: http://jakarta.apache.org/oro/
 
 These should be placed in the lib directory and named according to the ant build file.
