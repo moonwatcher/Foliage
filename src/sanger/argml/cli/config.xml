@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:environment xmlns:p="http://sanger.ac.uk/argml/xsd/property.xsd"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://sanger.ac.uk/argml/xsd/property.xsd ../xsd/property.xsd ">
+	<properties>
+
+		<!-- Standard IO -->
+		<string name="InputBase" symbol="--I" default=".">
+			<help>Path to base input directory.</help>
+		</string>
+		<string name="OutputBase" symbol="--O" default=".">
+			<help>Path to base output directory.</help>
+		</string>
+		<string name="Input" symbol="--i">
+			<help>Input file name, if specified, otherwise stdin.</help>
+		</string>
+		<string name="Output" symbol="--o">
+			<help>Output file name, if specified, otherwise stdout.</help>
+		</string>
+		<string name="Log" symbol="--l">
+			<help>Log file name, if specified, otherwise stderr.</help>
+		</string>
+		<string name="Topic" symbol="--topic" >
+			<help>Display syntax for topic.</help>
+		</string>
+		<string name="Name" symbol="--n">
+			<help>Sample name to use.</help>
+		</string>
+		<integer name="SampleSize" symbol="--ss" default="1">
+			<help>Number of samples to generate.</help>
+		</integer>
+		<integer name="SubSampleSize" symbol="--sss">
+			<help>Number of elements to sub sample.</help>
+		</integer>
+		<boolean name="NonOverlappingSubSample" symbol="--noss">
+			<help>Select a non overlapping random sub sample for every sample.</help>
+		</boolean>
+		<integer name="Tile" symbol="--tl" default="2000">
+			<help>Tile length.</help>
+		</integer>		
+		<integer name="Type" symbol="--tp" default="1">
+			<help>Type.</help>
+		</integer>
+		<string name="Other" symbol="--b">
+			<help>Other.</help>
+		</string>
+		<string name="Pattern" symbol="--pt">
+			<help>Regex pattern.</help>
+		</string>
+		<integer name="HotspotFactor" symbol="--hotspot-factor" default="10">
+			<help>Hotspot calling factor.</help>
+		</integer>
+		<string name="Haplotypes" symbol="--h">
+			<help>Margarita style haplotype file with marker positions.</help>
+		</string>
+		<!-- FastPHASE -->
+		<string name="FastPHASEInput" symbol="--fpi">
+			<help>FastPHASE input file.</help>
+		</string>
+		<string name="FastPHASEOutput" symbol="--fpo">
+			<help>FastPHASE output file.</help>
+		</string>
+		
+		<!-- Constraints -->
+		<integer name="LowerSnp" symbol="--sl">
+			<help>Lower snp clip point.</help>
+		</integer>
+		<integer name="UpperSnp" symbol="--sh">
+			<help>Upper snp clip point.</help>
+		</integer>
+		<integer name="LowerArg" symbol="--al">
+			<help>Lower ARG clip point.</help>
+		</integer>
+		<integer name="UpperArg" symbol="--ah">
+			<help>Upper ARG clip point.</help>
+		</integer>
+
+
+		<!-- ARG manipulation -->
+		<boolean name="MultiFurcate" symbol="--mf">
+			<help>Multi Furcating ARG.</help>
+		</boolean>
+		<string name="DistanceMetric" symbol="--dm" default="sbp">
+			<help>Distance metric used to estimate tree shifts.</help>
+		</string>
+		<boolean name="NoCollapse" symbol="--nc">
+			<help>Do not collapse single-in/single-out consecutive nodes.</help>
+		</boolean>
+		<integer name="GridSpacing" symbol="--gs" default="100000">
+			<help>SNP grid lines spacing.</help>
+		</integer>
+		<double name="Zoom" symbol="--zm" default="1.0">
+			<help>Zoom factor.</help>
+		</double>
+		<double name="AspectRatio" symbol="--ar" default="1.0">
+			<help>Aspect ratio when generating images (not applicable to all modes).</help>
+		</double>
+		<boolean name="ReportEmptyRegions" symbol="--rer">
+			<help>Report empty active regions on edges.</help>
+		</boolean>
+		<string name="HaplotypeVerbosity" symbol="--hv" default="root">
+			<help>Verbosity level for haplotype sequences on GraphML nodes (none, root, leaf,all).</help>
+		</string>
+		<boolean name="NodeActivity" symbol="--na">
+			<help>Include implicit active regions on nodes in GraphML output.</help>
+		</boolean>
+
+		<!-- Diagram options -->
+		<boolean name="RecombinationDensityDistribution" symbol="--rdd">
+			<help>Plot the ARG recombination density distribution.</help>
+		</boolean>
+		<boolean name="MinorAlleleDensityDistribution" symbol="--madd">
+			<help>Plot the minor allele density distribution.</help>
+		</boolean>
+		<boolean name="SnpDensityDistribution" symbol="--sdd">
+			<help>Snp density distribution.</help>
+		</boolean>
+		
+		<!-- Diagram dimension -->
+		<integer name="DistributionRange" symbol="--distribution-range" default="120">
+			<help>Distribution range in pixels.</help>
+		</integer>
+		<integer name="AxisRange" symbol="--axis-range" default="80">
+			<help>Axis range in pixels.</help>
+		</integer>
+		<integer name="Padding" symbol="--padding" default="5">
+			<help>Padding in pixels.</help>
+		</integer>
+		<integer name="ScaleRange" symbol="--scale-range" default="20">
+			<help>Scale range in pixels.</help>
+		</integer>
+		<string name="CustomGridLine" symbol="--cgl">
+			<help>Comma seperated list of custom grid positions.</help>
+		</string>
+
+		<!-- Colors -->
+		<string name="BackgroundColor" symbol="--background-color" default="0xEEFFFFFF">
+			<help>Background color.</help>
+		</string>
+		<string name="GridColor" symbol="--grid-color" default="0x60FFFFFF" >
+			<help>Grid color.</help>
+		</string>
+		<string name="LineColor" symbol="--line-color" default="0xCC111111" >
+			<help>Line color.</help>
+		</string>
+		<string name="NotchColor" symbol="--notch-color" default="0xBBFFFFFF" >
+			<help>Line color.</help>
+		</string>
+		<string name="LegendColor" symbol="--legend-color" default="0xDD111111" >
+			<help>Line color.</help>
+		</string>
+		<string name="MeanColor" symbol="--mean-color" default="0x6011AA11" >
+			<help>Mean color.</help>
+		</string>
+		<string name="HotspotColor" symbol="--hotspot-color" default="0x60AA1111" >
+			<help>Hotspot color.</help>
+		</string>
+		<string name="PositiveTileColor" symbol="--positive-tile-color" default="0x305d878b" >
+			<help>Positive tile color.</help>
+		</string>
+		<string name="NegativeTileColor" symbol="--negative-tile-color" default="0x30BCCED0" >
+			<help>Negative tile color.</help>
+		</string>
+		<string name="BarColor" symbol="--bar-color" default="0xCC394220" >
+			<help>Distribution bar color.</help>
+		</string>
+		<string name="SignificantBarColor" symbol="--significant-bar-color" default="0xDD7F0000" >
+			<help>Significant Distribution bar color.</help>
+		</string>
+
+		<string name="MRCAColor" symbol="--mrca-color" default="996622" >
+			<help>MRCA node color.</help>
+		</string>
+		<string name="RecombinationColor" symbol="--recombination-color" default="669933" >
+			<help>Recombination node color.</help>
+		</string>
+		<string name="CoalescenceColor" symbol="--coalescence-color" default="8899AA" >
+			<help>Coalescence node color.</help>
+		</string>
+		<string name="MutationColor" symbol="--mutation-color" default="DD1111" >
+			<help>Mutation node color.</help>
+		</string>
+		<string name="EdgeColor" symbol="--edge-color" default="255580" >
+			<help>Edge color.</help>
+		</string>
+		<string name="Font" symbol="--font" default="Bitstream Vera Sans" >
+			<help>Font.</help>
+		</string>
+		<integer name="FontSize" symbol="--font-size" default="10">
+			<help>Font size.</help>
+		</integer>		
+	</properties>
+	
+	<command>
+		<instruction name="help">
+			<depend name="Topic" optional="true"/>
+			<help>print help on topic.</help>
+		</instruction>
+
+		<instruction name="pttd">
+			<depend name="Name" />
+			<depend name="Tile" />
+			<depend name="Other" optional="true" />
+			<depend name="LowerSnp" optional="true" />
+			<depend name="UpperSnp" optional="true" />
+			<depend name="Zoom" optional="true" />
+			<depend name="GridSpacing" optional="true" />
+			<depend name="DistanceMetric" optional="true"/>
+			<depend name="RecombinationDensityDistribution" optional="true" />
+			<depend name="SnpDensityDistribution" optional="true" />			
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<depend name="CustomGridLine" optional="true" />
+			<depend name="BackgroundColor" optional="true" />
+			<depend name="GridColor" optional="true" />
+			<depend name="LineColor" optional="true" />
+			<depend name="MeanColor" optional="true" />
+			<depend name="HotspotColor" optional="true" />
+			<depend name="PositiveTileColor" optional="true" />
+			<depend name="NegativeTileColor" optional="true" />
+			<depend name="BarColor" optional="true" />
+			<depend name="DistributionRange" optional="true" />
+			<depend name="AxisRange" optional="true" />
+			<depend name="Padding" optional="true" />
+			<depend name="ScaleRange" optional="true" />			
+			<depend name="Font" optional="true" />			
+			<depend name="FontSize" optional="true" />			
+			<help>plot a local tree correlation diagram.</help>
+		</instruction>
+		
+		<instruction name="pttdp">
+			<depend name="Name" />
+			<depend name="Tile" />
+			<depend name="Other" optional="true" />
+			<depend name="LowerSnp" optional="true" />
+			<depend name="UpperSnp" optional="true" />
+			<depend name="Zoom" optional="true" />
+			<depend name="GridSpacing" optional="true" />
+			<depend name="DistanceMetric" optional="true"/>
+			<depend name="RecombinationDensityDistribution" optional="true" />
+			<depend name="SnpDensityDistribution" optional="true" />			
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<depend name="CustomGridLine" optional="true" />
+			<depend name="BackgroundColor" optional="true" />
+			<depend name="GridColor" optional="true" />
+			<depend name="LineColor" optional="true" />
+			<depend name="MeanColor" optional="true" />
+			<depend name="HotspotColor" optional="true" />
+			<depend name="PositiveTileColor" optional="true" />
+			<depend name="NegativeTileColor" optional="true" />
+			<depend name="BarColor" optional="true" />
+			<depend name="SignificantBarColor" optional="true" />
+			<depend name="DistributionRange" optional="true" />
+			<depend name="AxisRange" optional="true" />
+			<depend name="Padding" optional="true" />
+			<depend name="ScaleRange" optional="true" />			
+			<depend name="Font" optional="true" />			
+			<depend name="FontSize" optional="true" />			
+			<help>plot a local tree correlation diagram.</help>
+		</instruction>
+		
+		<instruction name="ld">
+			<depend name="Name" />		
+			<depend name="Tile" />
+			<depend name="Other" optional="true" />
+			<depend name="LowerSnp" optional="true" />
+			<depend name="UpperSnp" optional="true" />
+			<depend name="GridSpacing" optional="true" />
+			<depend name="MinorAlleleDensityDistribution" optional="true" />			
+			<depend name="SnpDensityDistribution" optional="true" />			
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<depend name="CustomGridLine" optional="true" />
+			<depend name="BackgroundColor" optional="true" />
+			<depend name="GridColor" optional="true" />
+			<depend name="LineColor" optional="true" />
+			<depend name="PositiveTileColor" optional="true" />
+			<depend name="NegativeTileColor" optional="true" />
+			<depend name="BarColor" optional="true" />
+			<depend name="AxisRange" optional="true" />
+			<depend name="Padding" optional="true" />
+			<depend name="ScaleRange" optional="true" />			
+			<depend name="Font" optional="true" />			
+			<depend name="FontSize" optional="true" />			
+			<help>plot an LD diagram.</help>
+		</instruction>
+		
+		<instruction name="pttd-ld">
+			<depend name="Name" />		
+			<depend name="Tile" />
+			<depend name="Other" optional="true" />
+			<depend name="LowerSnp" optional="true" />
+			<depend name="UpperSnp" optional="true" />
+			<depend name="GridSpacing" optional="true" />
+			<depend name="RecombinationDensityDistribution" optional="true" />
+			<depend name="MinorAlleleDensityDistribution" optional="true" />			
+			<depend name="SnpDensityDistribution" optional="true" />			
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<depend name="CustomGridLine" optional="true" />
+			<depend name="BackgroundColor" optional="true" />
+			<depend name="GridColor" optional="true" />
+			<depend name="LineColor" optional="true" />
+			<depend name="PositiveTileColor" optional="true" />
+			<depend name="NegativeTileColor" optional="true" />
+			<depend name="BarColor" optional="true" />
+			<depend name="AxisRange" optional="true" />
+			<depend name="Padding" optional="true" />
+			<depend name="ScaleRange" optional="true" />			
+			<depend name="Font" optional="true" />			
+			<depend name="FontSize" optional="true" />			
+			<help>plot an LD/TTDD diagram.</help>
+		</instruction>
+		
+		<instruction name="margarita">
+			<depend name="SampleSize" />
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />			
+			<input>Haplotype</input>
+			<output>ARG</output>
+			<help>generate ancestral recombination graphs with margarita.</help>
+		</instruction>
+
+		<instruction name="from-phase">
+			<depend name="FastPHASEInput" />
+			<depend name="FastPHASEOutput" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<help>create haplotype file from fastphase.</help>
+		</instruction>
+
+		<instruction name="subsample-haplotype">
+			<depend name="SubSampleSize" />
+			<depend name="SampleSize" optional="true" />
+			<depend name="NonOverlappingSubSample" optional="true" />
+			<depend name="LowerSnp" optional="true" />
+			<depend name="UpperSnp" optional="true" />
+			<depend name="Input" optional="true" />
+			<depend name="Output" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<input>Haplotype</input>
+			<output>Haplotype</output>
+			<help>create haplotype file with random set.</help>
+		</instruction>
+
+		<instruction name="statistic">
+			<depend name="Haplotypes" />
+			<depend name="Name" />
+			<depend name="LowerSnp" optional="true" />
+			<depend name="UpperSnp" optional="true" />
+			<depend name="LowerArg" optional="true" />
+			<depend name="UpperArg" optional="true" />
+			<depend name="MultiFurcate" optional="true" />
+			<depend name="ReportEmptyRegions" optional="true" />
+			<depend name="NoCollapse" optional="true" />
+			<depend name="DistanceMetric" optional="true"/>
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<input>ARG</input>
+			<output>Statistics</output>
+			<help>calculate ARG statistics.</help>
+		</instruction>
+
+		<instruction name="scollect">
+			<depend name="Pattern" />
+			<depend name="DistanceMetric" optional="true"/>
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<output>Statistics</output>
+			<help>aggregate statistics from all files matching the pattern.</help>
+		</instruction>
+
+		<instruction name="sfilter">
+			<depend name="Other" optional="true" />
+			<depend name="Pattern" optional="true" />
+			<depend name="DistanceMetric" optional="true"/>
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<input>Statistics</input>
+			<output>Statistics</output>
+			<help>filter statistics matching the pattern.</help>
+		</instruction>
+
+		<instruction name="ssummarize">
+			<depend name="Name" />
+			<depend name="Pattern" optional="true" />
+			<depend name="DistanceMetric" optional="true"/>
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<input>Statistics</input>
+			<output>Statistics</output>
+			<help>summarize statistics matching the pattern.</help>
+		</instruction>
+
+		<instruction name="dot">
+			<depend name="LowerSnp" optional="true" />
+			<depend name="UpperSnp" optional="true" />
+			<depend name="LowerArg" optional="true" />
+			<depend name="UpperArg" optional="true" />
+			<depend name="MultiFurcate" optional="true" />
+			<depend name="ReportEmptyRegions" optional="true" />
+			<depend name="NoCollapse" optional="true" />
+			<depend name="Type" optional="true" />			
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<depend name="MRCAColor" optional="true" />
+			<depend name="RecombinationColor" optional="true" />
+			<depend name="CoalescenceColor" optional="true" />
+			<depend name="MutationColor" optional="true" />
+			<depend name="EdgeColor" optional="true" />			
+			<help>render dot file for ARG.</help>
+		</instruction>
+
+		<instruction name="graphml">
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<help>write GraphML ARG.</help>
+		</instruction>
+
+		<instruction name="debug">
+			<depend name="LowerSnp" optional="true" />
+			<depend name="UpperSnp" optional="true" />
+			<depend name="LowerArg" optional="true" />
+			<depend name="UpperArg" optional="true" />		
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<help>write simple text ARG.</help>
+		</instruction>
+
+		<instruction name="validate">
+			<depend name="Haplotypes" />
+			<depend name="MultiFurcate" optional="true" />
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<help>validate ARG structure.</help>
+		</instruction>
+
+		<instruction name="svalidate">
+			<depend name="Haplotypes" />
+			<depend name="Input" optional="true" />
+			<depend name="Output" optional="true" />
+			<depend name="Log" optional="true" />
+			<depend name="InputBase" optional="true" />
+			<depend name="OutputBase" optional="true" />
+			<help>validate ARG sub structure.</help>
+		</instruction>
+	</command>
+</p:environment>
