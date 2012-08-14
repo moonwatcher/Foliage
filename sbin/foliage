@@ -25,8 +25,8 @@
 # Requires JVM 6.x
 # -----------------------------------------------------------------------------------------
 
-JAVA="/software/jdk1.6.0_01/bin/java"
-ARGMLLIB="/nfs/phd/lg8/workspace/argml/argmllib.jar"
+JAVA="java"
+ARGMLLIB="argmllib.jar"
 FOLIAGE=$JAVA' -Djava.awt.headless=true -Xmx1000M -Xmn1000M -jar '$ARGMLLIB
 
 $FOLIAGE $*

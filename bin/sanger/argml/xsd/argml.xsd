@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			targetNamespace="http://sanger.ac.uk/xsd/argml.xsd" 
+			xmlns:gx="http://sanger.ac.uk/xsd/argml.xsd"
+			xmlns="http://sanger.ac.uk/xsd/argml.xsd" >
+
+	<xsd:element name="activity" type="interval" />
+	
+	<xsd:complexType name="interval">
+		<xsd:sequence minOccurs="0">
+			<xsd:element ref="map" />
+		</xsd:sequence>
+		<xsd:attribute name="left" type="xsd:nonNegativeInteger" />
+		<xsd:attribute name="right" type="xsd:nonNegativeInteger" />
+		<xsd:attribute name="topology" type="intervalTopology" default="closed"/>
+	</xsd:complexType>
+	
+	<xsd:element name="mutation">
+		<xsd:complexType>
+			<xsd:attribute name="marker" type="xsd:nonNegativeInteger"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:simpleType name="binaryVector">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[01]+"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="intervalTopology">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="empty" />
+			<xsd:enumeration value="closed" />
+			<xsd:enumeration value="fragments" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:element name="haplotype" type="binaryVector" />
+	<xsd:element name="map" type="binaryVector" />
+	
+</xsd:schema>
