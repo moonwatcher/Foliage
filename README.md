@@ -10,7 +10,7 @@ Foliage is released under the terms of the [GNU GPL](http://www.gnu.org/licenses
 It was written during my work period at the [Richard Durbin](http://www.sanger.ac.uk/Teams/faculty/durbin) lab 
 at the [Sanger Institute](http://www.sanger.ac.uk) between November 2006 to February 2008.
 
-An __Ancestral Recombination Graph___ is a [directed acyclic graph](http://en.wikipedia.org/wiki/Directed_acyclic_graph)
+An __Ancestral Recombination Graph__ is a [directed acyclic graph](http://en.wikipedia.org/wiki/Directed_acyclic_graph)
 composed of the trees that relate individuals in a population at each position on the genome.
 The trees vary as one moves along the chromosome, because of ancestral recombination events.
 
