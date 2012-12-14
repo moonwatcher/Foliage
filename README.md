@@ -1,7 +1,7 @@
 Foliage is a software library for efficiently constructing ancestral recombination graphs in memory, written in Java.
 It facilitates the implementation of various algorithms and statistical analysis by providing a [coherent API](http://moonwatcher.github.com/Foliage/) for the graphs.
-It is capable of cropping the graphs along the genome coordinates, drawing [Graphviz](http://www.graphviz.org) diagrams of the graphs 
-and correlation heat maps that measure linkage across the genome by comparing the distance between the marginal trees using the Felsenstein tree distance metric.
+It is capable of cropping the graphs along the genome coordinates and draw [Graphviz](http://www.graphviz.org) diagrams of the graphs.
+Foliage can plot various [recombination correlation heat maps](http://moonwatcher.github.com/Foliage/A1B8AVG_A3B7_2K.png) that measure linkage across the genome by comparing the distance between the marginal trees using the Felsenstein tree distance metric.
 It can also plot Linkage Disequilibrium or [compare the two](http://moonwatcher.github.com/Foliage/0_TTCP_LD_A1B8.png). 
 
 Here are some graphs for a small region of the Human Major Histocompatibility Complex. Graphs can be constructed as the classic [bi furcated graphs](http://moonwatcher.github.com/Foliage/6_A3B7.3.1300_1340_2.png), corresponding to the Wright-Fisher model, 
